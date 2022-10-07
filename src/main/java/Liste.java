@@ -1,11 +1,12 @@
 public class Liste {
-
     private String data;
     private Liste next;
+
 
     //Constructor
     public Liste() {
     }
+
     public Liste(String data, Liste next) {
         this.data = data;
         this.next = next;
@@ -13,11 +14,7 @@ public class Liste {
 
     //Methods
     @Override
-    public String toString() {
-        return "Liste{" +
-                "node='" + data + '\'' +
-                ", next=" + next +
-                '}';
+    public String toString() {return "Liste{" + "node='" + data + '\'' + ", next=" + next + '}';
     }
 
     public String getData() {
@@ -28,21 +25,40 @@ public class Liste {
         this.data = data;
     }
 
-    public Liste getNext() {
-        return next;
-    }
+    public Liste getNext() { return next;}
 
     public void setNext(Liste next) {
         this.next = next;
     }
-    public void addNode(String data){
+
+    public void addNode(String data) {
+
         Liste current = this;
 
-        while(current.getNext() != null) {
+        while (current.getNext() != null) {
             current = current.getNext();
         }
-        current.setNext(new Liste(data,null));
+        current.setNext(new Liste(data, null));
     }
 
+    public int getLength() {
+
+        if (this.getNext() == null) {
+            return 0;
+        }
+
+
+        int length = 0;
+        Liste current = this;
+
+
+        while (current.getNext() != null) {
+            current = current.getNext();
+            length++;
+        }
+        return length;
     }
+
+
+}
 
