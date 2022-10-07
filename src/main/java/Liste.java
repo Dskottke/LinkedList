@@ -35,7 +35,14 @@ public class Liste {
     public void setNext(Liste next) {
         this.next = next;
     }
+    public void addNode(String node){
+        Liste current = this;
 
+        while(current.getNext() != null) {
+            current = current.getNext();
+        }
+        current.setNext(new Liste(node,null));
+    }
 
     }
 

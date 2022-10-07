@@ -3,7 +3,7 @@ public class Main {
 
         Liste list = new Liste("hallo" , new Liste("hihi",null));
 
-
+        list.addNode("hahahihi");
 
         System.out.println(list);
     }
