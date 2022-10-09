@@ -21,6 +21,7 @@ public class LinkedList {
     public void addObjectAtLast(Object o) {
         if(firstListElement.getObject()==(null)){
             firstListElement.setObject(o);
+            return;
         }
         ListObject lastObject = getLastObject();
         ListObject nextObject = new ListObject(o);
@@ -34,8 +35,22 @@ public class LinkedList {
         }
         return current;
     }
+    public void deleteObject(Object o){
+        ListObject current = firstListElement;
+        ListObject find = new ListObject(o);
+
+        while(!current.getObject().equals(find.getObject()))
+            if(current.getNextObject().getObject().equals(o)){
+
+              current.setNextObject(current.getNextObject().getNextObject());
+              return;}
+
+            else current = current.getNextObject();
+        }
+
+    }
 
 
 
-}
+
 

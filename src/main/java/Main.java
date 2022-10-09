@@ -5,8 +5,12 @@ public class Main {
     list.addObjectAtLast("a");
     list.addObjectAtLast("b");
     list.addObjectAtLast("c");
+    list.addObjectAtLast("d");
+    list.addObjectAtLast("e");
 
-        System.out.println(list.toString());
+    list.deleteObject("b");
+
+    System.out.println(list.toString());
     }
 
 
